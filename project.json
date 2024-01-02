@@ -1,0 +1,44 @@
+{
+  "name": "pieces-sync",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/pieces/sync/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/packages/pieces/sync",
+        "tsConfig": "packages/pieces/sync/tsconfig.lib.json",
+        "packageJson": "packages/pieces/sync/package.json",
+        "main": "packages/pieces/sync/src/index.ts",
+        "assets": [
+          "packages/pieces/sync/*.md"
+        ],
+        "buildableProjectDepsInPackageJsonType": "dependencies",
+        "updateBuildableProjectDepsInPackageJson": true
+      }
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs pieces-sync {args.ver} {args.tag}",
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "packages/pieces/sync/**/*.ts",
+          "packages/pieces/sync/package.json"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
