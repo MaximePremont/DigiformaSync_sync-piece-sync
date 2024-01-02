@@ -1,4 +1,5 @@
 {
   "name": "@digiforma-sync/piece-sync",
-  "version": "0.0.1"
+  "version": "0.0.1",
+  "repository": "https://github.com/Digiforma-Sync/sync-pieces-sync.git"
 }
