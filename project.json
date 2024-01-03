@@ -1,5 +1,5 @@
 {
-  "name": "pieces-sync",
+  "name": "piece-sync",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/pieces/sync/src",
   "projectType": "library",
@@ -22,7 +22,7 @@
       }
     },
     "publish": {
-      "command": "node tools/scripts/publish.mjs pieces-sync {args.ver} {args.tag}",
+      "command": "node tools/scripts/publish.mjs piece-sync {args.ver} {args.tag}",
       "dependsOn": [
         "build"
       ]

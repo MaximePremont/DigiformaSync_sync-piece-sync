@@ -1,6 +1,6 @@
 import {createPiece} from "@activepieces/pieces-framework";
-import {syncAuth} from "./lib/common/auth";
 import {getTask} from "./lib/actions/get-task";
+import {syncAuth} from "@digiforma-sync/piece-sync-common";
 
 export const sync = createPiece({
   displayName: "Sync",
