@@ -1,0 +1,26 @@
+name: Création d'une release au push d'un tag
+
+on:
+  push:
+    tags:
+      - "v[0-9]+.[0-9]+.[0-9]+"
+
+jobs:
+  tagged-release:
+    name: "Création de la release"
+    runs-on: "ubuntu-latest"
+    permissions:
+      contents: write
+      pull-requests: read
+
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+
+      - name: "⭐ Création de la release"
+        uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.PAT }}" # not GIT_TOKEN, see: https://stackoverflow.com/a/69063453
+          prerelease: false
+          files: |
+            LICENSE.txt
