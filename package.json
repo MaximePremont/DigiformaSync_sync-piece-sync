@@ -9,9 +9,10 @@
     "registry": "https://npm.pkg.github.com"
   },
   "dependencies": {
-    "@digiforma-sync/piece-sync-common": "1.0.0"
+    "@digiforma-sync/piece-sync-common": "^1.0.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\""
+    "test": "echo \"Error: no test specified\"",
+    "postinstall": "./node_modules/@digiforma-sync/piece-sync-common/tools/intall-in-sub-piece.sh"
   }
 }

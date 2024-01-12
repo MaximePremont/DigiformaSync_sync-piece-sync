@@ -1,6 +1,7 @@
 import {createAction, Property} from "@activepieces/pieces-framework";
 import {HttpMethod} from "@activepieces/pieces-common";
-import {platformAccessUidProps, request} from "@digiforma-sync/piece-sync-common";
+import { request } from '../sync-common/request';
+import { platformAccessUidProps } from '../sync-common/props';
 
 export const getTask = createAction({
     name: 'task_get',
